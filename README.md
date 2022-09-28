@@ -4,6 +4,18 @@
 
 A fresh FRAME-based [Substrate](https://www.substrate.io/) node, ready for hacking :rocket:
 
+### Task
+
+Write a simple pallet for an oracle event feed
+
+- An event is arbitrary length bytes
+
+- Only a single authorised account may post an event
+
+- The pallet should store the last 1 hour of events
+
+- Notes down any known security issues, or things to be improved if you are running out of time
+
 ### Rust Setup
 
 First, complete the [basic Rust setup instructions](./docs/rust-setup.md).
@@ -39,7 +51,7 @@ cargo test -p pallet_oracle_feed
 > [genesis state](https://github.com/substrate-developer-hub/substrate-node-template/blob/main/node/src/chain_spec.rs#L49).
 > At the same time the following accounts will be pre-funded:
 >
-> - Alice (Sudo or Root Origin by default)
+> - Alice (Sudo or Root Origin by default) -
 > - Bob
 > - Alice//stash
 > - Bob//stash
