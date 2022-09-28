@@ -164,7 +164,7 @@ parameter_types! {
 	pub Schedule: pallet_contracts::Schedule<Runtime> = Default::default();
 
 	pub const  MaxValue: u32 = 6;
-	pub const KeyLimit:u32 = 90;
+	pub const KeyLimit:u32 = 15;
 	
 
 }
