@@ -18,7 +18,7 @@ Write a simple pallet for an oracle event feed
 
 ### Notice:
 
-Instead of 1 hour, I'm setting it up to 100 seconds, so that we can the event removal update in a short time. If anyone wants to increase the time, please go to /pallets/pallet_oracle_feed/src/lib.rs file
+Instead of 1 hour, I'm setting it up to 100 seconds, so that we can see the event removal update in a shorter time. If anyone wants to increase the time, please go to /pallets/pallet_oracle_feed/src/lib.rs file
 
 - And check line no: 85
 
