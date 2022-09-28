@@ -20,7 +20,6 @@ pub mod pallet {
 	use frame_system::pallet_prelude::*;
 	use scale_info::TypeInfo;
 	use frame_support::traits::UnixTime;
-	use frame_support::sp_runtime::traits::Zero;
 
 
 	/// Configure the pallet by specifying the parameters and types on which it depends.
@@ -81,19 +80,23 @@ pub mod pallet {
 
 	#[pallet::hooks]
 	impl<T: Config> Hooks<BlockNumberFor<T>> for Pallet<T> {
-		fn on_initialize(_now: T::BlockNumber) -> Weight {
-		 
-			let time: u64 = T::TimeProvider::now().as_secs() - 180 ;
-			
+		fn on_initialize(_: T::BlockNumber) -> Weight {
+			// here we fetch the current blocktime - 3600 seconds(1 hour)
+			let time: u64 = T::TimeProvider::now().as_secs().saturating_sub(100) ;
+			// And we iterate over the stored event's time stamp
+			//And remove those event which is less than or equal to 'time' variable value
 			<RootOracleEvent<T>>::mutate(|event_list| {
 				if let Some(index) = event_list.iter().position(|member| member.time_stamp <= time) {
-					event_list.remove(index);
+						event_list.remove(index);
+				
 					
 				}
 				
 			});
 					
-			Weight::zero()
+			// Weight::zero()
+			T::DbWeight::get().writes(1)
+
 		}
 
 	

@@ -20,7 +20,7 @@ frame_support::construct_runtime!(
 		UncheckedExtrinsic = UncheckedExtrinsic,
 	{
 		System: frame_system,
-		ClubPalletTesting: pallet_oracle_feed::{Pallet, Call, Storage, Event<T>},
+		OraclePalletTesting: pallet_oracle_feed::{Pallet, Call, Storage, Event<T>},
 		Timestamp: pallet_timestamp,
 
 
@@ -81,5 +81,7 @@ impl pallet_oracle_feed::Config for Test {
 
 // Build genesis storage according to the mock runtime.
 pub fn new_test_ext() -> sp_io::TestExternalities {
-	system::GenesisConfig::default().build_storage::<Test>().unwrap().into()
+    let mut ext: sp_io::TestExternalities = system::GenesisConfig::default().build_storage::<Test>().unwrap().into();
+	ext.execute_with(|| System::set_block_number(1));
+    ext
 }
