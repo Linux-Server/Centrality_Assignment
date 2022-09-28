@@ -16,6 +16,19 @@ Write a simple pallet for an oracle event feed
 
 - Notes down any known security issues, or things to be improved if you are running out of time
 
+### Notice:
+
+Instead of 1 hour, I'm setting it up to 100 seconds, so that we can the event removal update in a short time. If anyone wants to increase the time, please go to /pallets/pallet_oracle_feed/src/lib.rs file
+
+- And check line no: 85
+
+  ```sh
+  		let time: u64 = T::TimeProvider::now().as_secs().saturating_sub(100) ;
+
+  ```
+
+- Change that 100 into the number of seconds you want to remove the event
+
 ### Rust Setup
 
 First, complete the [basic Rust setup instructions](./docs/rust-setup.md).
@@ -55,12 +68,6 @@ cargo test -p pallet_oracle_feed
 > - Bob
 > - Alice//stash
 > - Bob//stash
-
-This command will start the single-node development chain with non-persistent state:
-
-```bash
-./target/release/node-template --dev
-```
 
 > Above code will run the blockchain node in local machine port : 9944
 
