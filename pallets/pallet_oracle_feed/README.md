@@ -29,6 +29,15 @@ Instead of 1 hour, I'm setting it up to 100 seconds, so that we can see the even
 
 - Change that 100 into the number of seconds you want to remove the event
 
+### Youtube video of overall flow
+
+Before moving to the codebase. I strongly recommend to watch this youtube video(created by me), to get a brief idea about the entire flow.
+
+```
+https://youtu.be/WFVGPdlJe1A
+
+```
+
 ### Rust Setup
 
 First, complete the [basic Rust setup instructions](./docs/rust-setup.md).
@@ -82,9 +91,3 @@ Once the node template is running locally, you can connect it with **Polkadot-JS
 to interact with your chain. [Click
 here](https://polkadot.js.org/apps/#/explorer?rpc=ws://localhost:9944) connecting the Apps to your
 local node template.
-
-### Youtube video of overall flow
-
-```
-
-```
