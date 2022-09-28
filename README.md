@@ -8,14 +8,6 @@ A fresh FRAME-based [Substrate](https://www.substrate.io/) node, ready for hacki
 
 First, complete the [basic Rust setup instructions](./docs/rust-setup.md).
 
-### Run
-
-Use Rust's native `cargo` command to build and launch the template node:
-
-```sh
-cargo run --release
-```
-
 ### Build
 
 The `cargo run` command will perform an initial build. Use the following command to build the node
@@ -27,17 +19,11 @@ cargo build --release
 
 ### Test
 
-The below command will execute all the test cases defined in /pallets/pallet_club?src/test.rs file
+The below command will execute all the test cases defined in /pallets/pallet_oracle_feed/src/test.rs file
 
 ```sh
-cargo test -p pallet_club
+cargo test -p pallet_oracle_feed
 ```
-
-## Run
-
-The provided `cargo run` command will launch a temporary node and its state will be discarded after
-you terminate the process. After the project has been built, there are other ways to launch the
-node.
 
 ### Single-Node Development Chain
 
@@ -74,6 +60,5 @@ local node template.
 ### Youtube video of overall flow
 
 ```
-https://www.youtube.com/watch?v=nyW_nlNI_ZQ
 
 ```
