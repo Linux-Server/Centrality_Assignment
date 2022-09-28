@@ -1,4 +1,4 @@
-use crate as pallet_club;
+use crate as pallet_oracle_feed;
 use frame_support::traits::{ConstU16, ConstU64};
 use frame_system as system;
 use sp_core::H256;
@@ -20,7 +20,7 @@ frame_support::construct_runtime!(
 		UncheckedExtrinsic = UncheckedExtrinsic,
 	{
 		System: frame_system,
-		ClubPalletTesting: pallet_club::{Pallet, Call, Storage, Event<T>},
+		ClubPalletTesting: pallet_oracle_feed::{Pallet, Call, Storage, Event<T>},
 		Timestamp: pallet_timestamp,
 
 
@@ -72,7 +72,7 @@ impl pallet_timestamp::Config for Test {
 	type WeightInfo = ();
 }
 
-impl pallet_club::Config for Test {
+impl pallet_oracle_feed::Config for Test {
 	type Event = Event;
 	type MaxValue = MaxValue;
 	type KeyLimit= KeyLimit;

@@ -1,4 +1,4 @@
-//! Benchmarking setup for pallet_club
+//! Benchmarking setup for pallet_oracle_feed
 
 use super::*;
 

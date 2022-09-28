@@ -9,14 +9,11 @@ mod mock;
 #[cfg(test)]
 mod tests;
 
-// #[cfg(feature = "runtime-benchmarks")]
-// mod benchmarking;
-
-
 #[frame_support::pallet]
 pub mod pallet {
 	use frame_support::storage::bounded_vec::BoundedVec;
 	use frame_support::{
+		
 		dispatch::{DispatchResult, PartialEq},
 		pallet_prelude::*,
 	};
@@ -51,7 +48,6 @@ pub mod pallet {
 		event_name: BoundedVec<u8, T::KeyLimit>,
 		event_description : BoundedVec<u8, T::KeyLimit>,
 		added_block: T::BlockNumber,
-		//root_account : T::AccountId,
 		time_stamp : u64
 	}
 
@@ -127,6 +123,7 @@ pub mod pallet {
 			//check wheather the call is made by the Root origin(sudo user)
 			//In dev chain by default `Alice` is the sudo user
 			ensure_root(origin)?;
+			
 
 	        //fetch the current block number
 			let current_block = <frame_system::Pallet<T>>::block_number();

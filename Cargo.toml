@@ -1,7 +1,7 @@
 [workspace]
 members = [
     "node",
-    "pallets/pallet_club",
+    "pallets/pallet_oracle_feed",
     "runtime",
 ]
 [profile.release]
