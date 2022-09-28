@@ -17,6 +17,13 @@ without launching it:
 cargo build --release
 ```
 
+Once the build is completed successfully, below command will start the single-node development chain with non-persistent state:
+
+```bash
+./target/release/node-template --dev
+
+```
+
 ### Test
 
 The below command will execute all the test cases defined in /pallets/pallet_oracle_feed/src/test.rs file
