@@ -91,3 +91,8 @@ Once the node template is running locally, you can connect it with **Polkadot-JS
 to interact with your chain. [Click
 here](https://polkadot.js.org/apps/#/explorer?rpc=ws://localhost:9944) connecting the Apps to your
 local node template.
+
+### Things to be improved
+
+- Benchmarking should be added
+- More testcase need to be covered
